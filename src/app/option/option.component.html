@@ -1,0 +1,55 @@
+<div class="cont mt-2 mx-2">
+    <div class="pre bg-dark">
+        <button (click)="OnClick()"><b>GPS TEAMS</b></button>
+        <ng-container *ngIf="toggle==true">
+            <button value="epcc" class="bt" (click)="func($event)">EPCC</button>
+            <ng-container *ngIf="team1 == true">
+                <div *ngFor="let a of EPCC ;let i=index">
+                    <div *ngIf="i==0">
+                        <a class="text-light" type="btn" (click)="calfunc()">{{a}}</a>
+
+                    </div>
+                    <div *ngIf="i!=0">
+                        <a class="text-light" type="btn">{{a}}</a>
+                    </div>
+                </div>
+            </ng-container>
+            <button value="epcm" class="bt" (click)="func($event)">EPCM</button>
+            <ng-container *ngIf="team2 == true">
+
+                <div *ngFor="let a of EPCM;let j=index">
+                    <div *ngIf="j==0">
+                        <a class="text-light" type="btn" (click)="calfunc()">{{a}}</a>
+
+                    </div>
+                    <div *ngIf="j!=0">
+                        <a class="text-light" type="btn">{{a}}</a>
+                    </div>
+                </div>
+            </ng-container>
+            <button value="epcl" class="bt" (click)="func($event)">EPCL</button>
+            <ng-container *ngIf="team3 == true">
+
+                <div *ngFor="let a of EPCL; let i=index">
+                    <div *ngIf="i==0">
+                        <a class="text-light" type="btn" (click)="calfunc()">{{a}}</a>
+
+                    </div>
+                    <div *ngIf="i!=0">
+                        <a class="text-light" type="btn">{{a}}</a>
+                    </div> 
+                </div>
+            </ng-container>
+        </ng-container>
+
+    </div>
+    <div class="d-flex flex-row align-items-md-start mx-2 check justify-content-around">
+        <ng-container *ngIf="calander == true">
+            <input placeholder="Start Date" class="textbox-n" type="text" onfocus="(this.type='date')" />
+            <input placeholder="End Date" class="textbox-n" type="text" onfocus="(this.type='date')" />
+            <button type="button" class="bnt">
+                <i class="bi bi-search"></i>
+            </button>
+        </ng-container>
+    </div>
+</div>
